@@ -1,0 +1,9 @@
+{
+  "name"         : "marketingai",
+  "version"      : "0.0.0",
+  "description"  : "CS Games Challenge - Marketing.ai",
+  "main"         : "js/app.js",
+  "author"       : "Vincent Longpré",
+  "dependencies" : {
+  }
+}
