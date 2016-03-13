@@ -1,5 +1,6 @@
 # Ignoring node_modules. Install them with npm install
-/node_modules
+node_modules/
+bower_components/
 
 # Ignoring logs
 npm-debug.log

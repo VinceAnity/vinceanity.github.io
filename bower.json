@@ -1,0 +1,21 @@
+{
+  "name": "marketing-ai",
+  "homepage": "https://github.com/VinceAnity/marketingai",
+  "authors": [
+    "Vincent Longpré <vincent.longpre@gmail.com>"
+  ],
+  "description": "CS Games Challenge - Marketing.ai",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-tinymce": "latest"
+  }
+}
