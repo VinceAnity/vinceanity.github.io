@@ -1,19 +1,18 @@
 app.controller("mainController", function($scope, $http) {
-    var ssImageSearchUrl = 'https://api.shutterstock.com/v2/images/search';
-    var authToken = 'Basic ZGNiN2M3NTU0Y2Q4ZjcwMjk0NmE6MjM5ZDI4M2NiOGRiYmEzN2JjZDI3MmY4MDdmYjQzMjNmZDQ2Mzc0MQ==';
+    var ssImageSearchUrl = '';
 
     $http.get({
-        url: ssImageSearchUrl,
+        url: 'https://api.shutterstock.com/v2/images/search',
         method: 'GET',
         headers: {
-            'Authorization': authToken
+            'Authorization': 'Basic ZGNiN2M3NTU0Y2Q4ZjcwMjk0NmE6MjM5ZDI4M2NiOGRiYmEzN2JjZDI3MmY4MDdmYjQzMjNmZDQ2Mzc0MQ=='
         },
         params: {
             'query': 'drum'
         }
-    }).then(function success(response) {
+    }).then(function(response) {
         $scope.imageSearch = response.data;
-    }, function failure(response) {
+    }, function(response) {
         $scope.imageSearch = response.data;
     });
 });
