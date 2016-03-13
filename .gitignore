@@ -1,0 +1,5 @@
+# Ignoring node_modules. Install them with npm install
+/node_modules
+
+# Ignoring logs
+npm-debug.log
