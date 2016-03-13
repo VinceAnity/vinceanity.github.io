@@ -26,13 +26,16 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <textarea ui-tinymce ng-model="tinymceModel"></textarea>
-                <!-- <div ng-if="images">
+                <textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
+                <div ng-if="images">
                     <div ng-repeat="image in images">
                         <img src="{{image.assets.large_thumb.url}}" />
                     </div>
-                </div> -->
+                </div>
             </div>
+            <p>{{tinymceModel}}</p>
+            <p>{{status}}</p>
+            <p>{{concepts}}</p>
         </div>
     </div>
 </body>

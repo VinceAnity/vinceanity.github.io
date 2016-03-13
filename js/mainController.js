@@ -1,8 +1,6 @@
 app.controller("mainController", function($scope, $http) {
     $scope.tinymceOptions = {
         setup: function(editor) {
-            console.log("text changed.");
-
             //Focus the editor on load
             editor.on("change", function() {
                 $http({
@@ -13,11 +11,14 @@ app.controller("mainController", function($scope, $http) {
                         'X-AYLIEN-TextAPI-Application-Key': "18ebd80c679342549fd098293c0cebcf"
                     },
                     params: {
-                        'text': 'drum'
+                        'text': $scope.tinymceModel.replace(/<(?:.|\n)*?>/gm, '').split(" ").join("+")
                     }
                 }).then(function(response) {
-                    var keyword1 = response.concepts[0].surfaceForms[0].string;
-                    var keyword2 = response.concepts[1].surfaceForms[0].string;
+                    $scope.status = response.status;
+                    $scope.concepts = response.data;
+
+                    var keyword1 = response.data.concepts[0].surfaceForms[0].string;
+                    var keyword2 = response.data.concepts[1].surfaceForms[0].string;
 
                     $http({
                         url: 'https://api.shutterstock.com/v2/images/search',
@@ -31,10 +32,10 @@ app.controller("mainController", function($scope, $http) {
                     }).then(function(response) {
                         $scope.images = response.data.data;
                     }, function(response) {
-                        $scope.images = response.data.data;
+                        console.log("Rip en pièces.");
                     });
                 }, function(response) {
-                    console.log("Rip en pièces.")
+                    console.log("Rip en pièces.");
                 });
             });
         }
