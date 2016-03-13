@@ -6,3 +6,9 @@
 
 ## Stack
 - Front-end: Angular.js
+
+## Live demo
+vinceanity.github.io
+
+## Github
+https://github.com/VinceAnity/marketingai
